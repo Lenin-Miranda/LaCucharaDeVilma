@@ -1,6 +1,7 @@
 import Image from "next/image";
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
+import About from "./components/About";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <main className="flex min-h-screen w-full flex-col items-center justify-between bg-white dark:bg-black sm:items-start">
         <NavBar />
         <Hero />
+        <About />
       </main>
     </div>
   );
