@@ -8,7 +8,7 @@ export default function Hero() {
         src="/images/hero-image.jpg"
         alt="Hero background"
         fill
-        className="object-cover z-0 opacity-50 rounded-3xl shadow-2xl object-center"
+        className="object-cover z-0 opacity-50 shadow-2xl object-center"
         priority
       />
 
