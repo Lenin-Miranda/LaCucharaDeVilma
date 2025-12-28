@@ -16,7 +16,7 @@ export default function NavBar() {
     <nav
       className={
         scrolled
-          ? "bg-white transition-colors duration-300 dark:text-white dark:bg-black dark:to-blue-700/80 flex justify-between w-full py-6 px-4 z-1000 fixed"
+          ? "bg-white transition-colors duration-300 dark:text-white dark:bg-neutral-950 flex justify-between w-full py-6 px-4 z-1000 fixed"
           : "bg-transparent transition-colors duration-300 flex justify-between w-full py-6 px-4 z-1000 fixed"
       }
     >
