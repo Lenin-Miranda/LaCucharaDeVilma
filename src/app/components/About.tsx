@@ -31,7 +31,7 @@ export default function About() {
       </div>
       <div className="flex gap-6 w-full items-center justify-center mt-8">
         <div className="flex flex-col gap-6">
-          <div className="relative w-80 h-70">
+          <div data-aos="fade-right" className="relative w-80 h-70">
             <Image
               src="/images/nacatamal.jpg"
               alt="Nacatamal"
@@ -40,7 +40,7 @@ export default function About() {
               priority
             />
           </div>
-          <div className="relative w-80 h-70">
+          <div data-aos="fade-left" className="relative w-80 h-70">
             <Image
               src="/images/quesillo.jpg"
               alt="Quesillo"
@@ -51,7 +51,7 @@ export default function About() {
           </div>
         </div>
         <div className="flex flex-col gap-6">
-          <div className="relative mt-10 w-80 h-70">
+          <div data-aos="fade-down" className="relative mt-10 w-80 h-70">
             <Image
               src="/images/tres-leches.jpg"
               alt="Tres leches"
@@ -60,7 +60,7 @@ export default function About() {
               priority
             />
           </div>
-          <div className="relative w-80 h-70">
+          <div data-aos="fade-up" className="relative w-80 h-70">
             <Image
               src="/images/vigoron.jpg"
               alt="Vigorón"
