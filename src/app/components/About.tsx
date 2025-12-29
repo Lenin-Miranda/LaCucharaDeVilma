@@ -5,10 +5,13 @@ export default function About() {
   return (
     <section className="w-full h-screen flex justify-center px-6 items-center bg-blue-100 dark:bg-black">
       <div className="flex-col justify-center  w-full items-center">
-        <h1 className="text-6xl mb-4 font-bold px-6 drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30">
+        <h1
+          data-aos="fade-left"
+          className="text-6xl mb-4 font-bold px-6 drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30"
+        >
           Nuestra Historia
         </h1>
-        <p className="text-xl mb-8 px-6 ">
+        <p data-aos="fade-right" className="text-xl mb-8 px-6 ">
           Somos un restaurante en casa dedicado a traer el auténtico sabor de
           Nicaragua a Las Vegas. Nuestra misión es honrar y recordar nuestra
           patria a través del sazón inconfundible de la comida nica, preparada
@@ -19,7 +22,7 @@ export default function About() {
           donde cada bocado te transporta a los sabores y recuerdos de nuestra
           tierra.
         </p>
-        <p className="text-xl px-6">
+        <p data-aos="fade-left" className="text-xl px-6">
           Somos más que un restaurante; somos una familia que celebra la rica
           cultura gastronómica nicaragüense, desde el tradicional gallo pinto
           hasta el indio viejo, pasando por el vigorón que te transportará

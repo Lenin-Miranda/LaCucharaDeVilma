@@ -16,20 +16,30 @@ export default function NavBar() {
     <nav
       className={
         scrolled
-          ? "bg-white transition-colors duration-300 dark:text-white dark:bg-neutral-950 flex justify-between w-full py-6 px-4 z-1000 fixed"
-          : "bg-transparent transition-colors duration-300 flex justify-between w-full py-6 px-4 z-1000 fixed"
+          ? "bg-white transition-all duration-500 shadow-lg dark:text-white dark:bg-neutral-950 flex justify-between w-full py-6 px-4 z-1000 fixed animate-fade-in"
+          : "bg-transparent transition-all duration-500 flex justify-between w-full py-6 px-4 z-1000 fixed animate-fade-in"
       }
     >
-      <h1 className="font-bold text-2xl">La Cuhara De Vilma</h1>
+      <h1 className="font-bold text-2xl transition-transform duration-300 hover:scale-105 hover:text-blue-600">
+        La Cuhara De Vilma
+      </h1>
       <ul className="flex items-center justify-center gap-6">
-        <li className="cursor-pointer">Inicio</li>
-        <li className="cursor-pointer">Contacto</li>
-        <li className="cursor-pointer">Por Que Lo Hacemos</li>
-        <li className="cursor-pointer">Opiniones</li>
+        <li className="cursor-pointer transition-transform duration-300 hover:scale-110 hover:text-blue-500">
+          Inicio
+        </li>
+        <li className="cursor-pointer transition-transform duration-300 hover:scale-110 hover:text-blue-500">
+          Contacto
+        </li>
+        <li className="cursor-pointer transition-transform duration-300 hover:scale-110 hover:text-blue-500">
+          Por Que Lo Hacemos
+        </li>
+        <li className="cursor-pointer transition-transform duration-300 hover:scale-110 hover:text-blue-500">
+          Opiniones
+        </li>
         <li className="cursor-pointer">
           <button
             type="button"
-            className="dark:bg-blue-500 rounded-md cursor-pointer py-2 px-4"
+            className="dark:bg-blue-500 bg-blue-400 text-white rounded-md cursor-pointer py-2 px-4 transition-transform duration-300 hover:scale-110 hover:bg-blue-600 shadow-md"
           >
             Contacto
           </button>
