@@ -2,10 +2,16 @@ export default function Reviews() {
   return (
     <section className="flex flex-col bg-blue-100 dark:bg-black items-center justify-center gap-12 w-full h-screen px-6 py-10">
       <div className="flex flex-col justify-center items-center gap-6">
-        <h1 className="text-center font-bold text-6xl drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30">
+        <h1
+          data-aos="fade-down"
+          className="text-center font-bold text-6xl drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30"
+        >
           Lo Que Dicen Nuestros Clientes
         </h1>
-        <p className="text-center text-3xl drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30">
+        <p
+          data-aos="fade-up"
+          className="text-center text-3xl drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30"
+        >
           La satisfacción de nuestra familia es nuestro mayor orgullo
         </p>
       </div>
