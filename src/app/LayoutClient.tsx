@@ -5,7 +5,7 @@ import AOS from "aos";
 export default function LayoutClient() {
   useEffect(() => {
     AOS.init({
-      duration: 800,
+      duration: 1500,
       once: true,
     });
   }, []);

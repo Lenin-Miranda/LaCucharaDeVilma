@@ -4,16 +4,22 @@ export default function Wwdt() {
   return (
     <section className="w-full dark:bg-neutral-900 justify-center items-center h-screen px-4 flex flex-col gap-8 py-12">
       <div className="flex flex-col gap-8">
-        <h1 className="text-center drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30 font-bold text-6xl ">
+        <h1
+          data-aos="fade-down"
+          className="text-center drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30 font-bold text-6xl "
+        >
           Por Qué Lo Hacemos
         </h1>
-        <p className="text-center drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30 text-2xl">
+        <p
+          data-aos="fade-up"
+          className="text-center drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30 text-2xl"
+        >
           {" "}
           Nuestra pasión va más allá de cocinar. Es preservar nuestra herencia y
           compartir el orgullo de ser nicaragüenses.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div data-aos="fade-up" className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="flex flex-col rounded-xl w-full rounded p-8 gap-3 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl bg-gradient-to-b from-blue-500/40 via-blue-500/20 to-white dark:bg-black dark:bg-none">
           <span className="mb-8 rounded-[50%] w-14 h-14 bg-sky-200/80 dark:bg-neutral-800 flex items-center justify-center">
             🇳🇮
