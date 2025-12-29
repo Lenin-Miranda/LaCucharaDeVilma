@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Reviews from "./components/Reviews";
 import Wwdt from "./components/Wwdt";
+import Visit from "./components/Visit";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <About />
         <Wwdt />
         <Reviews />
+        <Visit />
       </main>
     </div>
   );

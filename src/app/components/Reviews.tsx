@@ -9,7 +9,7 @@ export default function Reviews() {
           La satisfacción de nuestra familia es nuestro mayor orgullo
         </p>
       </div>
-      <div className="flex justify-around gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
         <div className="p-10 rounded-xl transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl bg-gradient-to-b from-blue-500/40 via-blue-500/20 to-white dark:border dark:p-10 dark:rounded-xl dark:bg-neutral-900 dark:bg-none">
           <div className="flex flex-col gap-8 ">
             <div className="flex gap-6 items-center">
