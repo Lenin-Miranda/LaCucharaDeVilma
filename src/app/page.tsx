@@ -2,6 +2,7 @@ import Image from "next/image";
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Reviews from "./components/Reviews";
 import Wwdt from "./components/Wwdt";
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
         <Hero />
         <About />
         <Wwdt />
+        <Reviews />
       </main>
     </div>
   );

@@ -2,7 +2,7 @@
 
 export default function Wwdt() {
   return (
-    <section className="w-full dark:bg-neutral-900  h-screen px-4 flex flex-col gap-8 py-12">
+    <section className="w-full dark:bg-neutral-900 justify-center items-center h-screen px-4 flex flex-col gap-8 py-12">
       <div className="flex flex-col gap-8">
         <h1 className="text-center drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30 font-bold text-6xl ">
           Por Qué Lo Hacemos
