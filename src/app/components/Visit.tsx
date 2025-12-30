@@ -7,7 +7,7 @@ export default function Visit() {
   // Carousel logic
   const images = [
     "/images/fotoClientes.jpeg",
-    "/images/FotoClientes2.jpeg",
+    "/images/fotoClientes2.jpeg",
     "/images/fotoClientes3.jpeg",
   ];
   const [current, setCurrent] = useState(0);
