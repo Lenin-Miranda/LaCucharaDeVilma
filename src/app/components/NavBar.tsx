@@ -1,8 +1,16 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
+const navLinks = [
+  { label: "Inicio", to: "#hero" },
+  { label: "Por Qué Lo Hacemos", to: "#about" },
+  { label: "Opiniones", to: "#reviews" },
+  { label: "Visítanos", to: "#visit" },
+  { label: "Contacto", to: "#footer" },
+];
 export default function NavBar() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -12,39 +20,78 @@ export default function NavBar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Scroll suave a la sección
+  const handleNavClick = (to: string) => {
+    setMenuOpen(false);
+    const el = document.querySelector(to);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <nav
       className={
-        scrolled
-          ? "bg-white transition-all duration-500 shadow-lg dark:text-white dark:bg-neutral-950 flex justify-between w-full py-6 px-4 z-1000 fixed animate-fade-in"
-          : "bg-transparent transition-all duration-500 flex justify-between w-full py-6 px-4 z-1000 fixed animate-fade-in"
+        (scrolled
+          ? "bg-white transition-all duration-500 shadow-lg dark:text-white dark:bg-neutral-950 "
+          : "bg-transparent transition-all duration-500 ") +
+        "flex justify-between items-center w-full py-4 px-4 z-50 fixed animate-fade-in"
       }
     >
-      <h1 className="font-bold text-2xl transition-transform duration-300 hover:scale-105 hover:text-blue-600">
-        La Cuhara De Vilma
+      <h1
+        className="font-bold text-2xl transition-transform duration-300 hover:scale-105 hover:text-blue-600 cursor-pointer"
+        onClick={() => handleNavClick("#hero")}
+      >
+        La Cuchara De Vilma
       </h1>
-      <ul className="flex items-center justify-center gap-6">
-        <li className="cursor-pointer transition-transform duration-300 hover:scale-110 hover:text-blue-500">
-          Inicio
-        </li>
-        <li className="cursor-pointer transition-transform duration-300 hover:scale-110 hover:text-blue-500">
-          Contacto
-        </li>
-        <li className="cursor-pointer transition-transform duration-300 hover:scale-110 hover:text-blue-500">
-          Por Que Lo Hacemos
-        </li>
-        <li className="cursor-pointer transition-transform duration-300 hover:scale-110 hover:text-blue-500">
-          Opiniones
-        </li>
-        <li className="cursor-pointer">
-          <button
-            type="button"
-            className="dark:bg-blue-500 bg-blue-400 text-white rounded-md cursor-pointer py-2 px-4 transition-transform duration-300 hover:scale-110 hover:bg-blue-600 shadow-md"
+      {/* Desktop nav */}
+      <ul className="hidden md:flex items-center justify-center gap-6">
+        {navLinks.map((link) => (
+          <li
+            key={link.label}
+            className="cursor-pointer transition-transform duration-300 hover:scale-110 hover:text-blue-500"
+            onClick={() => handleNavClick(link.to)}
           >
-            Contacto
-          </button>
-        </li>
+            {link.label}
+          </li>
+        ))}
       </ul>
+      {/* Mobile hamburger */}
+      <button
+        className="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none"
+        aria-label="Abrir menú"
+        onClick={() => setMenuOpen((v) => !v)}
+      >
+        <span
+          className={`block w-7 h-1 bg-blue-600 rounded transition-all duration-300 ${
+            menuOpen ? "rotate-45 translate-y-2" : ""
+          }`}
+        ></span>
+        <span
+          className={`block w-7 h-1 bg-blue-600 rounded my-1 transition-all duration-300 ${
+            menuOpen ? "opacity-0" : ""
+          }`}
+        ></span>
+        <span
+          className={`block w-7 h-1 bg-blue-600 rounded transition-all duration-300 ${
+            menuOpen ? "-rotate-45 -translate-y-2" : ""
+          }`}
+        ></span>
+      </button>
+      {/* Mobile menu */}
+      {menuOpen && (
+        <ul className="absolute top-full left-0 w-full bg-white dark:bg-neutral-950 shadow-lg flex flex-col items-center gap-6 py-8 animate-fade-in md:hidden">
+          {navLinks.map((link) => (
+            <li
+              key={link.label}
+              className="cursor-pointer text-xl font-semibold transition-transform duration-300 hover:scale-110 hover:text-blue-500"
+              onClick={() => handleNavClick(link.to)}
+            >
+              {link.label}
+            </li>
+          ))}
+        </ul>
+      )}
     </nav>
   );
 }
