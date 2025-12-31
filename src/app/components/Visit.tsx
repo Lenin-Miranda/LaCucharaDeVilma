@@ -1,32 +1,48 @@
 "use client";
 import Image from "next/image";
-import { useState, useRef, useEffect } from "react";
-import { FaMapMarkerAlt, FaPhoneAlt, FaClock } from "react-icons/fa";
+import { useState, useRef, useEffect, useMemo } from "react";
+import {
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaClock,
+  FaChevronLeft,
+  FaChevronRight,
+} from "react-icons/fa";
 
 export default function Visit() {
   // Carousel logic
-  const images = [
-    "/images/fotoClientes.jpeg",
-    "/images/fotoClientes2.jpeg",
-    "/images/fotoClientes3.jpeg",
-  ];
+  const images = useMemo(
+    () => [
+      "/images/fotoClientes.jpeg",
+      "/images/fotoClientes2.jpeg",
+      "/images/fotoClientes3.jpeg",
+    ],
+    []
+  );
   const [current, setCurrent] = useState(0);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const resumeRef = useRef<NodeJS.Timeout | null>(null);
+  const [isPaused, setIsPaused] = useState(false);
   const startX = useRef<number | null>(null);
   const deltaX = useRef<number>(0);
 
-  // Auto-slide every 2s
+  // Auto-slide interval (pausable)
   useEffect(() => {
-    timeoutRef.current = setTimeout(() => {
+    if (isPaused) return;
+    const id = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
     }, 4000);
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, [current]);
+    return () => clearInterval(id);
+  }, [isPaused, images.length]);
+
+  // resume timer helper
+  const scheduleResume = (delay = 6000) => {
+    if (resumeRef.current) clearTimeout(resumeRef.current);
+    resumeRef.current = setTimeout(() => setIsPaused(false), delay);
+  };
 
   // Drag handlers
   const handleDragStart = (e: React.TouchEvent | React.MouseEvent) => {
+    setIsPaused(true);
     if ("touches" in e) {
       startX.current = e.touches[0].clientX;
     } else {
@@ -47,7 +63,42 @@ export default function Visit() {
     }
     startX.current = null;
     deltaX.current = 0;
+    scheduleResume();
   };
+
+  // controls
+  const prev = () => {
+    setIsPaused(true);
+    setCurrent((p) => (p - 1 + images.length) % images.length);
+    scheduleResume();
+  };
+  const next = () => {
+    setIsPaused(true);
+    setCurrent((p) => (p + 1) % images.length);
+    scheduleResume();
+  };
+  const goTo = (i: number) => {
+    setIsPaused(true);
+    setCurrent(i % images.length);
+    scheduleResume();
+  };
+
+  // keyboard navigation
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "ArrowRight") next();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  // cleanup resume timer on unmount
+  useEffect(() => {
+    return () => {
+      if (resumeRef.current) clearTimeout(resumeRef.current);
+    };
+  }, []);
 
   return (
     <section className="flex flex-col md:flex-row items-center justify-center gap-8 w-full min-h-screen px-2 sm:px-6 py-8 bg-sky-100 dark:bg-neutral-900 overflow-x-hidden">
@@ -74,25 +125,48 @@ export default function Visit() {
             src={src}
             alt={`Foto ${idx + 1}`}
             fill
-            className={`object-cover absolute top-0 left-0 w-full h-full transition-opacity duration-700 ease-in-out ${
-              idx === current ? "opacity-100 z-10" : "opacity-0 z-0"
+            className={`object-cover absolute top-0 left-0 w-full h-full transition-opacity duration-700 ease-in-out transform transition-transform duration-700 ${
+              idx === current
+                ? "opacity-100 z-10 scale-105"
+                : "opacity-0 z-0 scale-100"
             }`}
             draggable={false}
             priority={idx === 0}
           />
         ))}
+
+        {/* Prev/Next buttons */}
+        <button
+          onClick={prev}
+          aria-label="Anterior"
+          className="absolute left-3 top-1/2 -translate-y-1/2 z-30 bg-white/80 dark:bg-neutral-800/70 hover:bg-white dark:hover:bg-neutral-700 rounded-full p-2 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+          <FaChevronLeft />
+        </button>
+        <button
+          onClick={next}
+          aria-label="Siguiente"
+          className="absolute right-3 top-1/2 -translate-y-1/2 z-30 bg-white/80 dark:bg-neutral-800/70 hover:bg-white dark:hover:bg-neutral-700 rounded-full p-2 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+          <FaChevronRight />
+        </button>
+
         {/* Dots */}
         <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-20">
-          {images.map((_, idx) => (
+          {images.map((src, idx) => (
             <button
-              key={idx}
-              className={`w-3 h-3 rounded-full transition-all duration-300 border border-white/80 ${
+              key={src}
+              className={`w-3 h-3 rounded-full transition-all duration-300 border border-white/80 focus:outline-none focus:ring-2 focus:ring-blue-300 ${
                 idx === current ? "bg-blue-500 scale-110" : "bg-white/60"
               }`}
-              onClick={() => setCurrent(idx)}
+              onClick={() => goTo(idx)}
               aria-label={`Ir a la foto ${idx + 1}`}
             />
           ))}
+        </div>
+
+        <div className="sr-only" aria-live="polite">
+          Foto {current + 1} de {images.length}
         </div>
       </div>
       <div className="flex flex-col gap-6 md:w-1/2 w-full rounded-2xl p-4 sm:p-8 md:p-12 shadow-lg justify-start h-full max-w-2xl mx-auto items-start text-left">
