@@ -16,21 +16,21 @@ export default function Footer() {
             La Cuchara de Vilma
           </h3>
           <div className="flex items-center gap-2 text-lg">
-            <span className="text-sky-300">
+            <span className="text-sky-300 dark:text-sky-400">
               <FaMapMarkerAlt size={20} />
             </span>
-            <span>6136 Windmill Island Ave</span>
+            <span className="text-white">6136 Windmill Island Ave</span>
           </div>
           <div className="flex items-center gap-2 text-lg">
-            <span className="text-sky-300">
+            <span className="text-sky-300 dark:text-sky-400">
               <FaPhoneAlt size={20} />
             </span>
-            <span>725 772 0694</span>
+            <span className="text-white">725 772 0694</span>
           </div>
         </div>
         {/* Columna 2: Redes sociales */}
         <div className="flex flex-col gap-3 items-center">
-          <span className="text-lg font-semibold">Síguenos</span>
+          {/*<span className="text-lg font-semibold">Síguenos</span>
           <div className="flex gap-6 mt-1">
             <Link
               href="https://facebook.com"
@@ -50,7 +50,7 @@ export default function Footer() {
                 <FaInstagram size={28} />
               </span>
             </Link>
-          </div>
+          </div> */}
         </div>
         {/* Columna 3: Derechos */}
         <div className="flex flex-col items-center md:items-end text-center md:text-right text-sm text-sky-200 dark:text-neutral-400 gap-1 md:gap-2 mt-6 md:mt-0">
@@ -59,8 +59,8 @@ export default function Footer() {
             derechos reservados.
           </p>
           <p>
-            Desarrollado con <span className="text-pink-400">♥</span> por tu
-            equipo.
+            Desarrollado con <span className="text-pink-400">♥</span> por Lenin
+            Miranda
           </p>
         </div>
       </div>

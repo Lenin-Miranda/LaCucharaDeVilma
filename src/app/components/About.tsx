@@ -8,13 +8,13 @@ export default function About() {
       <div className="w-full md:w-[56%] flex flex-col justify-center items-start max-w-2xl mx-auto px-2 sm:px-6 break-words">
         <h1
           data-aos="fade-left"
-          className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl mb-4 font-bold px-2 sm:px-6 drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30 max-w-full break-words text-left"
+          className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl mb-4 font-bold px-2 sm:px-6 drop-shadow-lg text-black dark:text-white max-w-full break-words text-left"
         >
           Nuestra Historia
         </h1>
         <p
           data-aos="fade-right"
-          className="text-sm xs:text-base sm:text-lg md:text-xl mb-6 sm:mb-8 px-2 sm:px-6 max-w-full break-words text-left"
+          className="text-sm xs:text-base sm:text-lg md:text-xl mb-6 sm:mb-8 px-2 sm:px-6 max-w-full break-words text-left text-neutral-800 dark:text-neutral-200 leading-relaxed"
         >
           Somos un restaurante en casa dedicado a traer el auténtico sabor de
           Nicaragua a Las Vegas. Nuestra misión es honrar y recordar nuestra
@@ -28,7 +28,7 @@ export default function About() {
         </p>
         <p
           data-aos="fade-left"
-          className="text-sm xs:text-base sm:text-lg md:text-xl px-2 sm:px-6 max-w-full break-words text-left"
+          className="text-sm xs:text-base sm:text-lg md:text-xl px-2 sm:px-6 max-w-full break-words text-left text-neutral-800 dark:text-neutral-200 leading-relaxed"
         >
           Somos más que un restaurante; somos una familia que celebra la rica
           cultura gastronómica nicaragüense, desde el tradicional gallo pinto

@@ -172,7 +172,7 @@ export default function Visit() {
       <div className="flex flex-col gap-6 md:w-1/2 w-full rounded-2xl p-4 sm:p-8 md:p-12 shadow-lg justify-start h-full max-w-2xl mx-auto items-start text-left">
         <h2
           data-aos="fade-left"
-          className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl font-bold mb-2 sm:mb-4 drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30 max-w-full break-words text-left"
+          className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl font-bold mb-2 sm:mb-4 drop-shadow-lg text-black dark:text-white max-w-full break-words text-left"
         >
           Visítanos
         </h2>
@@ -188,10 +188,10 @@ export default function Visit() {
             <FaMapMarkerAlt size={24} />
           </span>
           <div className="flex flex-col">
-            <span className="font-semibold drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30">
+            <span className="font-semibold drop-shadow-lg text-black dark:text-white">
               Dirección:
             </span>
-            <span className="drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30">
+            <span className="drop-shadow-lg text-neutral-800 dark:text-neutral-200">
               6136 Windmill Island Ave
             </span>
           </div>
@@ -208,10 +208,10 @@ export default function Visit() {
             <FaPhoneAlt size={22} />
           </span>
           <div className="flex flex-col">
-            <span className="font-semibold drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30">
+            <span className="font-semibold drop-shadow-lg text-black dark:text-white">
               Teléfono:
             </span>
-            <span className="drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30">
+            <span className="drop-shadow-lg text-neutral-800 dark:text-neutral-200">
               725 772 0694
             </span>
           </div>
@@ -228,17 +228,17 @@ export default function Visit() {
             <FaClock size={22} />
           </span>
           <div className="flex flex-col">
-            <span className="font-semibold drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30">
+            <span className="font-semibold drop-shadow-lg text-black dark:text-white">
               Horarios de atención:
             </span>
-            <span className="drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30">
+            <span className="drop-shadow-lg text-neutral-800 dark:text-neutral-200">
               Lunes - Domingo: 8:00am a 5:00pm
             </span>
           </div>
         </div>
         <p
           data-aos="fade-left"
-          className="mt-2 sm:mt-4 text-base xs:text-lg sm:text-xl md:text-2xl text-blue-900/80 dark:text-neutral-300 max-w-full break-words text-left"
+          className="mt-2 sm:mt-4 text-base xs:text-lg sm:text-xl md:text-2xl text-neutral-700 dark:text-neutral-200 max-w-full break-words text-left leading-relaxed"
         >
           Ven a disfrutar de una experiencia gastronómica única. Te esperamos
           con los brazos abiertos y el mejor sabor nicaragüense.

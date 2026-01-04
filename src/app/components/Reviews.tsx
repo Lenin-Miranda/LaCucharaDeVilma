@@ -4,13 +4,13 @@ export default function Reviews() {
       <div className="flex flex-col justify-center items-center gap-4">
         <h1
           data-aos="fade-down"
-          className="text-center font-bold text-2xl xs:text-3xl sm:text-4xl md:text-6xl drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30 max-w-full break-words"
+          className="text-center font-bold text-2xl xs:text-3xl sm:text-4xl md:text-6xl drop-shadow-lg text-black dark:text-white max-w-full break-words"
         >
           Lo Que Dicen Nuestros Clientes
         </h1>
         <p
           data-aos="fade-up"
-          className="text-center text-base xs:text-lg md:text-3xl drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30 max-w-full break-words"
+          className="text-center text-base xs:text-lg md:text-3xl drop-shadow-lg text-neutral-800 dark:text-neutral-200 max-w-full break-words"
         >
           La satisfacción de nuestra familia es nuestro mayor orgullo
         </p>
@@ -23,15 +23,17 @@ export default function Reviews() {
           <div className="flex flex-col gap-8 ">
             <div className="flex gap-4 items-center flex-wrap">
               <span className="dark:bg-neutral-600 bg-blue-100 p-2 sm:p-4 rounded-[50%] w-12 h-12 sm:w-[60px] sm:h-[60px] md:w-[80px] md:h-[80px] flex justify-center items-center font-bold text-lg sm:text-2xl md:text-3xl">
-                MC
+                LA
               </span>
-              <h3 className="drop-shadow-lg text-lg sm:text-2xl md:text-4xl font-bold bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30 max-w-full break-words">
-                Maria Carmen
+              <h3 className="drop-shadow-lg text-lg sm:text-2xl md:text-4xl font-bold text-black dark:text-white max-w-full break-words">
+                Lesther Alarcon
               </h3>
             </div>
-            <p className="text-neutral-400 text-sm sm:text-base md:text-xl max-w-full break-words">
-              "El mejor gallo pinto fuera de Nicaragua. Me transporta
-              directamente a mi infancia en Managua. ¡Simplemente espectacular!"
+            <p className="text-neutral-600 dark:text-neutral-300 text-sm sm:text-base md:text-xl max-w-full break-words leading-relaxed">
+              "Si de comer rico se trata la comida nica es unica y en las vegas
+              la disfrutamos con la{" "}
+              <span className="font-extrabold">cuchara de vilma</span>, sabor y
+              calidad en cada bocado."
             </p>
           </div>
         </div>
@@ -39,16 +41,17 @@ export default function Reviews() {
           <div className="flex flex-col gap-8">
             <div className="flex gap-4 items-center flex-wrap">
               <span className="dark:bg-neutral-600 bg-blue-100 p-2 sm:p-4 rounded-[50%] w-12 h-12 sm:w-[60px] sm:h-[60px] md:w-[80px] md:h-[80px] flex justify-center items-center font-bold text-lg sm:text-2xl md:text-3xl">
-                JR
+                LS
               </span>
-              <h3 className="drop-shadow-lg text-lg sm:text-2xl md:text-4xl font-bold bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30 max-w-full break-words">
-                Jose Ramon
+              <h3 className="drop-shadow-lg text-lg sm:text-2xl md:text-4xl font-bold text-black dark:text-white max-w-full break-words">
+                Luisa Santos
               </h3>
             </div>
-            <p className="text-neutral-400 text-sm sm:text-base md:text-xl max-w-full break-words">
-              "La atención es cálida y familiar. Los nacatamales están
-              exactamente como los hacía mi abuela. Un pedacito de Nicaragua en
-              cada bocado."
+            <p className="text-neutral-600 dark:text-neutral-300 text-sm sm:text-base md:text-xl max-w-full break-words leading-relaxed">
+              "Excelente comida{" "}
+              <span className="font-extrabold">Nicaragüense</span>, realmente te
+              hace sentir como en casa! Cada platillo tiene ese sabor autentico
+              y casero que tanto se extraña."
             </p>
           </div>
           <div className=""></div>
@@ -57,16 +60,17 @@ export default function Reviews() {
           <div className="flex flex-col gap-8">
             <div className="flex gap-4 items-center flex-wrap">
               <span className="dark:bg-neutral-600 bg-blue-100 p-2 sm:p-4 rounded-[50%] w-12 h-12 sm:w-[60px] sm:h-[60px] md:w-[80px] md:h-[80px] flex justify-center items-center font-bold text-lg sm:text-2xl md:text-3xl">
-                SR
+                CS
               </span>
-              <h3 className="drop-shadow-lg text-lg sm:text-2xl md:text-4xl font-bold bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30 max-w-full break-words">
-                Sofia Reyes
+              <h3 className="drop-shadow-lg text-lg sm:text-2xl md:text-4xl font-bold text-black dark:text-white max-w-full break-words">
+                Carlos Santos
               </h3>
             </div>
-            <p className="text-neutral-400 text-sm sm:text-base md:text-xl max-w-full break-words">
-              "Vine por curiosidad y ahora soy cliente habitual. El vigorón es
-              auténtico y las tajadas de plátano están perfectas. ¡Altamente
-              recomendado!"
+            <p className="text-neutral-600 dark:text-neutral-300 text-sm sm:text-base md:text-xl max-w-full break-words leading-relaxed">
+              "La comida <span className="font-extrabold">Nicaragüense</span> de
+              este lugar es simplemente maravillosa, con ese sabor autentico que
+              te abraza y te hace sentir cerca de casa desde el primer bocado.
+              Cada platillo esta hecho con amor y dedicacion."
             </p>
           </div>
           <div className=""></div>

@@ -6,13 +6,13 @@ export default function Wwdt() {
       <div className="flex flex-col gap-8">
         <h1
           data-aos="fade-down"
-          className="text-center drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30 font-bold text-2xl xs:text-3xl sm:text-4xl md:text-6xl max-w-full break-words"
+          className="text-center drop-shadow-lg text-black dark:text-white font-bold text-2xl xs:text-3xl sm:text-4xl md:text-6xl max-w-full break-words"
         >
           Por Qué Lo Hacemos
         </h1>
         <p
           data-aos="fade-up"
-          className="text-center drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30 text-base xs:text-lg md:text-2xl max-w-full break-words"
+          className="text-center drop-shadow-lg text-neutral-800 dark:text-neutral-200 text-base xs:text-lg md:text-2xl max-w-full break-words"
         >
           Nuestra pasión va más allá de cocinar. Es preservar nuestra herencia y
           compartir el orgullo de ser nicaragüenses.
@@ -26,10 +26,10 @@ export default function Wwdt() {
           <span className="mb-8 rounded-[50%] w-14 h-14 bg-sky-200/80 dark:bg-neutral-800 flex items-center justify-center">
             🇳🇮
           </span>
-          <h3 className="text-lg xs:text-xl md:text-2xl font-bold text-blue-950 drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30 max-w-full break-words">
+          <h3 className="text-lg xs:text-xl md:text-2xl font-bold drop-shadow-lg text-black dark:text-white max-w-full break-words">
             Tradicion
           </h3>
-          <p className="mt-4 text-sm xs:text-base md:text-lg max-w-full break-words text-neutral-800/80 dark:text-neutral-400">
+          <p className="mt-4 text-sm xs:text-base md:text-lg max-w-full break-words text-neutral-700 dark:text-neutral-300 leading-relaxed">
             Mantenemos vivas las recetas ancestrales que han pasado de
             generación en generación, honrando a quienes nos enseñaron el
             verdadero sabor de Nicaragua.
@@ -39,10 +39,10 @@ export default function Wwdt() {
           <span className="mb-8 rounded-[50%] w-14 h-14 bg-sky-200/80 dark:bg-neutral-800 flex items-center justify-center">
             ❤️
           </span>
-          <h3 className="text-lg xs:text-xl md:text-2xl font-bold text-blue-950 drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30 max-w-full break-words">
+          <h3 className="text-lg xs:text-xl md:text-2xl font-bold drop-shadow-lg text-black dark:text-white max-w-full break-words">
             Pasion
           </h3>
-          <p className="mt-4 text-sm xs:text-base md:text-lg max-w-full break-words text-neutral-800/80 dark:text-neutral-400">
+          <p className="mt-4 text-sm xs:text-base md:text-lg max-w-full break-words text-neutral-700 dark:text-neutral-300 leading-relaxed">
             Cada platillo es preparado con dedicación y cariño, porque sabemos
             que la comida es el lenguaje universal del amor y la familia.
           </p>
@@ -51,10 +51,10 @@ export default function Wwdt() {
           <span className="mb-8 rounded-[50%] w-14 h-14 bg-sky-200/80 dark:bg-neutral-800 flex items-center justify-center">
             🌎
           </span>
-          <h3 className="text-lg xs:text-xl md:text-2xl font-bold text-blue-950 drop-shadow-lg bg-gradient-to-b from-black via-black/40 to-white/30 bg-clip-text text-transparent dark:from-white dark:via-white/60 dark:to-black/30 max-w-full break-words">
+          <h3 className="text-lg xs:text-xl md:text-2xl font-bold drop-shadow-lg text-black dark:text-white max-w-full break-words">
             Comunidad
           </h3>
-          <p className="mt-4 text-sm xs:text-base md:text-lg max-w-full break-words text-neutral-800/80 dark:text-neutral-400">
+          <p className="mt-4 text-sm xs:text-base md:text-lg max-w-full break-words text-neutral-700 dark:text-neutral-300 leading-relaxed">
             Creamos un espacio donde todos se sienten como en casa, conectando a
             nuestra comunidad a través del sabor auténtico de nuestra tierra.
           </p>

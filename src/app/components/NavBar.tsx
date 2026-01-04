@@ -39,7 +39,7 @@ export default function NavBar() {
       }
     >
       <h1
-        className="font-bold text-2xl transition-transform duration-300 hover:scale-105 hover:text-blue-600 cursor-pointer"
+        className="font-bold text-2xl transition-transform duration-300 hover:scale-105 hover:text-blue-600 cursor-pointer text-neutral-900 dark:text-white"
         onClick={() => handleNavClick("#hero")}
       >
         La Cuchara De Vilma
@@ -49,7 +49,7 @@ export default function NavBar() {
         {navLinks.map((link) => (
           <li
             key={link.label}
-            className="cursor-pointer transition-transform duration-300 hover:scale-110 hover:text-blue-500"
+            className="cursor-pointer transition-transform duration-300 hover:scale-110 hover:text-blue-500 text-neutral-700 dark:text-neutral-200 font-medium"
             onClick={() => handleNavClick(link.to)}
           >
             {link.label}
@@ -84,7 +84,7 @@ export default function NavBar() {
           {navLinks.map((link) => (
             <li
               key={link.label}
-              className="cursor-pointer text-xl font-semibold transition-transform duration-300 hover:scale-110 hover:text-blue-500"
+              className="cursor-pointer text-xl font-semibold transition-transform duration-300 hover:scale-110 hover:text-blue-500 text-neutral-800 dark:text-neutral-200"
               onClick={() => handleNavClick(link.to)}
             >
               {link.label}
