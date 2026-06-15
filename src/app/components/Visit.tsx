@@ -174,7 +174,7 @@ export default function Visit() {
             data-aos="fade-left"
             className="w-full lg:w-1/2 flex flex-col gap-8"
           >
-            <p className="text-slate-600 dark:text-slate-400 text-base md:text-lg leading-relaxed">
+            <p className="text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">
               Ven a disfrutar de una experiencia gastronomica unica. Te esperamos con los brazos abiertos y el mejor sabor Nicaraguense.
             </p>
 
@@ -184,16 +184,16 @@ export default function Visit() {
                   key={item.label}
                   data-aos="fade-left"
                   data-aos-delay={`${i * 80}`}
-                  className="flex items-start gap-5 p-5 rounded-2xl bg-nica-blue-soft dark:bg-nica-blue-dark/50 hover:shadow-md transition-shadow duration-300"
+                  className="flex items-start gap-5 p-5 rounded-2xl bg-nica-blue-soft dark:bg-slate-800 hover:shadow-md transition-shadow duration-300"
                 >
-                  <div className="w-11 h-11 rounded-xl bg-nica-blue dark:bg-nica-blue-light flex items-center justify-center shrink-0 shadow-md text-white">
+                  <div className="w-11 h-11 rounded-xl bg-nica-blue flex items-center justify-center shrink-0 shadow-md text-white">
                     {item.icon}
                   </div>
                   <div>
                     <p className="text-xs font-semibold text-nica-gold uppercase tracking-wide mb-1">
                       {item.label}
                     </p>
-                    <p className="text-nica-blue-dark dark:text-white font-medium text-base">
+                    <p className="text-nica-blue-dark dark:text-slate-100 font-medium text-base">
                       {item.value}
                     </p>
                   </div>
