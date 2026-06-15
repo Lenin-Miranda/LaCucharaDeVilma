@@ -1,79 +1,114 @@
+"use client";
+
+const reviews = [
+  {
+    initials: "LA",
+    name: "Lesther Alarcon",
+    role: "Cliente",
+    text: "Si de comer rico se trata la comida nica es unica y en Las Vegas la disfrutamos con la Cuchara de Vilma, sabor y calidad en cada bocado.",
+    delay: "0",
+  },
+  {
+    initials: "LS",
+    name: "Luisa Santos",
+    role: "Cliente fiel",
+    text: "Excelente comida Nicaraguense, realmente te hace sentir como en casa. Cada platillo tiene ese sabor autentico y casero que tanto se anora.",
+    delay: "100",
+  },
+  {
+    initials: "CS",
+    name: "Carlos Santos",
+    role: "Cliente",
+    text: "La comida Nicaraguense de este lugar es simplemente maravillosa. Cada platillo esta hecho con amor y dedicacion que se siente desde el primer bocado.",
+    delay: "200",
+  },
+];
+
+const stars = Array(5).fill(null);
+
 export default function Reviews() {
   return (
-    <section className="flex flex-col bg-blue-100 dark:bg-black items-center justify-center gap-8 w-full min-h-screen px-2 sm:px-6 py-8 overflow-x-hidden">
-      <div className="flex flex-col justify-center items-center gap-4">
-        <h1
-          data-aos="fade-down"
-          className="text-center font-bold text-2xl xs:text-3xl sm:text-4xl md:text-6xl drop-shadow-lg text-black dark:text-white max-w-full break-words"
-        >
-          Lo Que Dicen Nuestros Clientes
-        </h1>
-        <p
-          data-aos="fade-up"
-          className="text-center text-base xs:text-lg md:text-3xl drop-shadow-lg text-neutral-800 dark:text-neutral-200 max-w-full break-words"
-        >
-          La satisfacción de nuestra familia es nuestro mayor orgullo
-        </p>
-      </div>
-      <div
-        data-aos="fade-down"
-        className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl mx-auto"
-      >
-        <div className="p-4 sm:p-6 md:p-10 rounded-xl transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl bg-gradient-to-b from-blue-500/40 via-blue-500/20 to-white dark:border dark:rounded-xl dark:bg-neutral-900 dark:bg-none">
-          <div className="flex flex-col gap-8 ">
-            <div className="flex gap-4 items-center flex-wrap">
-              <span className="dark:bg-neutral-600 bg-blue-100 p-2 sm:p-4 rounded-[50%] w-12 h-12 sm:w-[60px] sm:h-[60px] md:w-[80px] md:h-[80px] flex justify-center items-center font-bold text-lg sm:text-2xl md:text-3xl">
-                LA
-              </span>
-              <h3 className="drop-shadow-lg text-lg sm:text-2xl md:text-4xl font-bold text-black dark:text-white max-w-full break-words">
-                Lesther Alarcon
-              </h3>
-            </div>
-            <p className="text-neutral-600 dark:text-neutral-300 text-sm sm:text-base md:text-xl max-w-full break-words leading-relaxed">
-              "Si de comer rico se trata la comida nica es unica y en las vegas
-              la disfrutamos con la{" "}
-              <span className="font-extrabold">cuchara de vilma</span>, sabor y
-              calidad en cada bocado."
-            </p>
-          </div>
+    <section className="w-full py-20 md:py-28 bg-nica-blue-soft dark:bg-nica-blue-dark/40 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+
+        {/* Header */}
+        <div className="text-center mb-16">
+          <p
+            data-aos="fade-up"
+            className="text-nica-blue dark:text-nica-gold font-semibold text-xs uppercase tracking-[0.25em] mb-4"
+          >
+            Testimonios
+          </p>
+          <h2
+            data-aos="fade-up"
+            data-aos-delay="60"
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-nica-blue-dark dark:text-white leading-tight mb-4"
+          >
+            Lo Que Dicen<br />
+            <span className="text-nica-blue dark:text-nica-gold">Nuestros Clientes</span>
+          </h2>
+          <p
+            data-aos="fade-up"
+            data-aos-delay="100"
+            className="text-slate-600 dark:text-slate-400 text-lg"
+          >
+            La satisfaccion de nuestra familia es nuestro mayor orgullo
+          </p>
         </div>
-        <div className="p-4 sm:p-6 md:p-10 rounded-xl transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl bg-gradient-to-b from-blue-500/40 via-blue-500/20 to-white dark:border dark:rounded-xl dark:bg-neutral-900 dark:bg-none">
-          <div className="flex flex-col gap-8">
-            <div className="flex gap-4 items-center flex-wrap">
-              <span className="dark:bg-neutral-600 bg-blue-100 p-2 sm:p-4 rounded-[50%] w-12 h-12 sm:w-[60px] sm:h-[60px] md:w-[80px] md:h-[80px] flex justify-center items-center font-bold text-lg sm:text-2xl md:text-3xl">
-                LS
-              </span>
-              <h3 className="drop-shadow-lg text-lg sm:text-2xl md:text-4xl font-bold text-black dark:text-white max-w-full break-words">
-                Luisa Santos
-              </h3>
+
+        {/* Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {reviews.map((r, i) => (
+            <div
+              key={r.name}
+              data-aos="fade-up"
+              data-aos-delay={r.delay}
+              className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 card-glow flex flex-col"
+            >
+              {/* Stars */}
+              <div className="flex gap-1 mb-5">
+                {stars.map((_s, si) => (
+                  <svg
+                    key={si}
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="w-4 h-4 text-nica-gold"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+
+              {/* Big quote mark */}
+              <p
+                className="text-7xl font-serif leading-none text-nica-blue/15 dark:text-nica-gold/20 select-none mb-2"
+                aria-hidden="true"
+              >
+                &ldquo;
+              </p>
+
+              {/* Quote text */}
+              <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-sm md:text-base flex-1 mb-8">
+                {r.text}
+              </p>
+
+              {/* Attribution */}
+              <div className="flex items-center gap-4">
+                <div className="w-11 h-11 rounded-full bg-nica-blue dark:bg-nica-blue-light flex items-center justify-center flex-shrink-0 shadow-md">
+                  <span className="text-white font-bold text-xs tracking-wide">
+                    {r.initials}
+                  </span>
+                </div>
+                <div>
+                  <p className="font-semibold text-nica-blue-dark dark:text-white text-sm">
+                    {r.name}
+                  </p>
+                  <p className="text-nica-gold text-xs font-medium">{r.role}</p>
+                </div>
+              </div>
             </div>
-            <p className="text-neutral-600 dark:text-neutral-300 text-sm sm:text-base md:text-xl max-w-full break-words leading-relaxed">
-              "Excelente comida{" "}
-              <span className="font-extrabold">Nicaragüense</span>, realmente te
-              hace sentir como en casa! Cada platillo tiene ese sabor autentico
-              y casero que tanto se extraña."
-            </p>
-          </div>
-          <div className=""></div>
-        </div>
-        <div className="p-4 sm:p-6 md:p-10 rounded-xl transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl bg-gradient-to-b from-blue-500/40 via-blue-500/20 to-white dark:border dark:rounded-xl dark:bg-neutral-900 dark:bg-none">
-          <div className="flex flex-col gap-8">
-            <div className="flex gap-4 items-center flex-wrap">
-              <span className="dark:bg-neutral-600 bg-blue-100 p-2 sm:p-4 rounded-[50%] w-12 h-12 sm:w-[60px] sm:h-[60px] md:w-[80px] md:h-[80px] flex justify-center items-center font-bold text-lg sm:text-2xl md:text-3xl">
-                CS
-              </span>
-              <h3 className="drop-shadow-lg text-lg sm:text-2xl md:text-4xl font-bold text-black dark:text-white max-w-full break-words">
-                Carlos Santos
-              </h3>
-            </div>
-            <p className="text-neutral-600 dark:text-neutral-300 text-sm sm:text-base md:text-xl max-w-full break-words leading-relaxed">
-              "La comida <span className="font-extrabold">Nicaragüense</span> de
-              este lugar es simplemente maravillosa, con ese sabor autentico que
-              te abraza y te hace sentir cerca de casa desde el primer bocado.
-              Cada platillo esta hecho con amor y dedicacion."
-            </p>
-          </div>
-          <div className=""></div>
+          ))}
         </div>
       </div>
     </section>

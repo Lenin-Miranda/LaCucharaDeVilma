@@ -5,8 +5,10 @@ import AOS from "aos";
 export default function LayoutClient() {
   useEffect(() => {
     AOS.init({
-      duration: 1500,
+      duration: 700,
       once: true,
+      offset: 80,
+      easing: "ease-out-cubic",
     });
   }, []);
   return null;

@@ -1,66 +1,136 @@
 import Link from "next/link";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaPhoneAlt,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaPhoneAlt, FaMapMarkerAlt, FaClock } from "react-icons/fa";
+
+const navLinks = [
+  { label: "Inicio", to: "#hero" },
+  { label: "Historia", to: "#about" },
+  { label: "Por Que Lo Hacemos", to: "#wwdt" },
+  { label: "Opiniones", to: "#reviews" },
+  { label: "Visitanos", to: "#visit" },
+];
 
 export default function Footer() {
   return (
-    <footer className="w-full  bg-sky-900 dark:bg-neutral-950 text-white py-10 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-        {/* Columna 1: Info restaurante */}
-        <div className="flex flex-col gap-3 items-center md:items-start">
-          <h3 className="text-2xl font-bold tracking-wide mb-1">
-            La Cuchara de Vilma
-          </h3>
-          <div className="flex items-center gap-2 text-lg">
-            <span className="text-sky-300 dark:text-sky-400">
-              <FaMapMarkerAlt size={20} />
-            </span>
-            <span className="text-white">6136 Windmill Island Ave</span>
+    <footer className="w-full bg-nica-blue dark:bg-nica-blue-dark text-white">
+      {/* Main footer content */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+
+          {/* Column 1: Brand + contact */}
+          <div className="flex flex-col gap-5">
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-1">
+                La Cuchara de Vilma
+              </h3>
+              <p className="text-white/60 text-sm leading-relaxed">
+                Autentica cocina Nicaraguense en Las Vegas, preparada con amor y tradicion familiar.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-3 mt-2">
+              <a
+                href="tel:7257720694"
+                className="flex items-center gap-3 text-white/80 hover:text-nica-gold transition-colors duration-200 text-sm group"
+              >
+                <span className="w-8 h-8 rounded-lg bg-white/10 group-hover:bg-nica-gold/20 flex items-center justify-center transition-colors duration-200">
+                  <FaPhoneAlt size={13} />
+                </span>
+                725 772 0694
+              </a>
+              <div className="flex items-start gap-3 text-white/80 text-sm">
+                <span className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0 mt-0.5">
+                  <FaMapMarkerAlt size={13} />
+                </span>
+                6136 Windmill Island Ave, Las Vegas
+              </div>
+              <div className="flex items-center gap-3 text-white/80 text-sm">
+                <span className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
+                  <FaClock size={13} />
+                </span>
+                Lun - Dom: 8:00am a 5:00pm
+              </div>
+            </div>
           </div>
-          <div className="flex items-center gap-2 text-lg">
-            <span className="text-sky-300 dark:text-sky-400">
-              <FaPhoneAlt size={20} />
-            </span>
-            <span className="text-white">725 772 0694</span>
+
+          {/* Column 2: Nav links */}
+          <div className="flex flex-col gap-4">
+            <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-1">
+              Paginas
+            </h4>
+            <ul className="flex flex-col gap-3">
+              {navLinks.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.to}
+                    className="text-white/70 hover:text-nica-gold transition-colors duration-200 text-sm"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Social + CTA */}
+          <div className="flex flex-col gap-6">
+            <div>
+              <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-4">
+                Siguenos
+              </h4>
+              <div className="flex gap-3">
+                <Link
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="w-10 h-10 rounded-xl bg-white/10 hover:bg-nica-gold flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95"
+                >
+                  <FaFacebookF size={16} />
+                </Link>
+                <Link
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="w-10 h-10 rounded-xl bg-white/10 hover:bg-nica-gold flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95"
+                >
+                  <FaInstagram size={16} />
+                </Link>
+              </div>
+            </div>
+
+            <div className="bg-white/8 rounded-2xl p-5">
+              <p className="text-white font-semibold text-sm mb-1">Haz tu pedido hoy</p>
+              <p className="text-white/60 text-xs mb-4">Llamanos y con gusto te atendemos</p>
+              <a
+                href="tel:7257720694"
+                className="btn-gold inline-flex items-center gap-2 text-white font-semibold text-sm px-5 py-2.5 rounded-xl"
+              >
+                <FaPhoneAlt size={12} />
+                Llamar ahora
+              </a>
+            </div>
           </div>
         </div>
-        {/* Columna 2: Redes sociales */}
-        <div className="flex flex-col gap-3 items-center">
-          {/*<span className="text-lg font-semibold">Síguenos</span>
-          <div className="flex gap-6 mt-1">
-            <Link
-              href="https://facebook.com"
-              target="_blank"
-              aria-label="Facebook"
-            >
-              <span className="text-2xl text-white hover:text-sky-400 transition-colors duration-200">
-                <FaFacebookF size={28} />
-              </span>
-            </Link>
-            <Link
-              href="https://instagram.com"
-              target="_blank"
-              aria-label="Instagram"
-            >
-              <span className="text-2xl text-white hover:text-pink-400 transition-colors duration-200">
-                <FaInstagram size={28} />
-              </span>
-            </Link>
-          </div> */}
+      </div>
+
+      {/* Bottom bar with flag stripe */}
+      <div className="border-t border-white/10">
+        {/* Nicaraguan flag stripe */}
+        <div className="flex h-1">
+          <div className="flex-1 bg-nica-blue-light" />
+          <div className="flex-1 bg-white/30" />
+          <div className="flex-1 bg-nica-blue-light" />
         </div>
-        {/* Columna 3: Derechos */}
-        <div className="flex flex-col items-center md:items-end text-center md:text-right text-sm text-sky-200 dark:text-neutral-400 gap-1 md:gap-2 mt-6 md:mt-0">
+
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-white/50 text-xs">
           <p>
-            &copy; {new Date().getFullYear()} La Cuchara de Vilma. Todos los
-            derechos reservados.
+            &copy; {new Date().getFullYear()} La Cuchara de Vilma. Todos los derechos reservados.
           </p>
           <p>
-            Desarrollado con <span className="text-pink-400">♥</span> por Lenin
-            Miranda
+            Desarrollado con{" "}
+            <span className="text-nica-gold">♥</span>
+            {" "}por Lenin Miranda
           </p>
         </div>
       </div>

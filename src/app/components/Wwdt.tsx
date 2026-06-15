@@ -1,63 +1,143 @@
 "use client";
+import Image from "next/image";
+import { FaUtensils, FaHeart, FaUsers } from "react-icons/fa";
+import type { IconType } from "react-icons";
+
+interface Value {
+  Icon: IconType;
+  title: string;
+  body: string;
+  bg: string;
+  delay: string;
+}
+
+const values: Value[] = [
+  {
+    Icon: FaUtensils,
+    title: "Tradicion",
+    body: "Mantenemos vivas las recetas ancestrales que han pasado de generacion en generacion, honrando a quienes nos ensenaron el verdadero sabor de Nicaragua.",
+    bg: "bg-nica-blue",
+    delay: "0",
+  },
+  {
+    Icon: FaHeart,
+    title: "Pasion",
+    body: "Cada platillo es preparado con dedicacion y carino, porque sabemos que la comida es el lenguaje universal del amor y la familia.",
+    bg: "bg-nica-gold",
+    delay: "100",
+  },
+  {
+    Icon: FaUsers,
+    title: "Comunidad",
+    body: "Creamos un espacio donde todos se sienten como en casa, conectando a nuestra comunidad a traves del sabor autentico de nuestra tierra.",
+    bg: "bg-nica-blue-dark",
+    delay: "200",
+  },
+];
+
+const dishes = [
+  { name: "Nacatamal", img: "/images/nacatamal.jpg" },
+  { name: "Vigoron", img: "/images/vigoron.jpg" },
+  { name: "Quesillo", img: "/images/quesillo.jpg" },
+  { name: "Tres Leches", img: "/images/tres-leches.jpg" },
+];
 
 export default function Wwdt() {
   return (
-    <section className="w-full min-h-screen dark:bg-neutral-900 justify-center items-center px-2 sm:px-4 flex flex-col gap-8 py-8 overflow-x-hidden">
-      <div className="flex flex-col gap-8">
-        <h1
-          data-aos="fade-down"
-          className="text-center drop-shadow-lg text-black dark:text-white font-bold text-2xl xs:text-3xl sm:text-4xl md:text-6xl max-w-full break-words"
-        >
-          Por Qué Lo Hacemos
-        </h1>
-        <p
-          data-aos="fade-up"
-          className="text-center drop-shadow-lg text-neutral-800 dark:text-neutral-200 text-base xs:text-lg md:text-2xl max-w-full break-words"
-        >
-          Nuestra pasión va más allá de cocinar. Es preservar nuestra herencia y
-          compartir el orgullo de ser nicaragüenses.
-        </p>
-      </div>
-      <div
-        data-aos="fade-up"
-        className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl mx-auto"
-      >
-        <div className="flex flex-col rounded-xl w-full p-4 sm:p-6 md:p-8 gap-3 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl bg-gradient-to-b from-blue-500/40 via-blue-500/20 to-white dark:bg-black dark:bg-none">
-          <span className="mb-8 rounded-[50%] w-14 h-14 bg-sky-200/80 dark:bg-neutral-800 flex items-center justify-center">
-            🇳🇮
-          </span>
-          <h3 className="text-lg xs:text-xl md:text-2xl font-bold drop-shadow-lg text-black dark:text-white max-w-full break-words">
-            Tradicion
-          </h3>
-          <p className="mt-4 text-sm xs:text-base md:text-lg max-w-full break-words text-neutral-700 dark:text-neutral-300 leading-relaxed">
-            Mantenemos vivas las recetas ancestrales que han pasado de
-            generación en generación, honrando a quienes nos enseñaron el
-            verdadero sabor de Nicaragua.
+    <section className="w-full py-20 md:py-28 bg-white dark:bg-slate-900 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+
+        {/* Header */}
+        <div className="text-center mb-16">
+          <p
+            data-aos="fade-up"
+            className="text-nica-blue dark:text-nica-gold font-semibold text-xs uppercase tracking-[0.25em] mb-4"
+          >
+            Nuestros valores
+          </p>
+          <h2
+            data-aos="fade-up"
+            data-aos-delay="60"
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-nica-blue-dark dark:text-white leading-tight mb-5"
+          >
+            Por Que Lo Hacemos
+          </h2>
+          <p
+            data-aos="fade-up"
+            data-aos-delay="100"
+            className="text-slate-600 dark:text-slate-400 text-lg max-w-xl mx-auto leading-relaxed"
+          >
+            Nuestra pasion va mas alla de cocinar. Es preservar nuestra herencia y compartir el orgullo de ser Nicaraguenses.
           </p>
         </div>
-        <div className="flex gap-3 flex-col rounded-xl w-full p-4 sm:p-6 md:p-8 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl bg-gradient-to-b from-blue-500/40 via-blue-500/20 to-white dark:bg-black dark:bg-none">
-          <span className="mb-8 rounded-[50%] w-14 h-14 bg-sky-200/80 dark:bg-neutral-800 flex items-center justify-center">
-            ❤️
-          </span>
-          <h3 className="text-lg xs:text-xl md:text-2xl font-bold drop-shadow-lg text-black dark:text-white max-w-full break-words">
-            Pasion
-          </h3>
-          <p className="mt-4 text-sm xs:text-base md:text-lg max-w-full break-words text-neutral-700 dark:text-neutral-300 leading-relaxed">
-            Cada platillo es preparado con dedicación y cariño, porque sabemos
-            que la comida es el lenguaje universal del amor y la familia.
-          </p>
+
+        {/* Value cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+          {values.map((v, i) => (
+            <div
+              key={v.title}
+              data-aos="fade-up"
+              data-aos-delay={v.delay}
+              className={`${v.bg} rounded-2xl p-8 md:p-10 relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 active:scale-[0.99]`}
+            >
+              {/* Decorative circles */}
+              <div className="absolute -top-10 -right-10 w-36 h-36 rounded-full bg-white/8 pointer-events-none" />
+              <div className="absolute -bottom-14 -left-8 w-44 h-44 rounded-full bg-white/5 pointer-events-none" />
+
+              <div className="relative z-10">
+                {/* Icon in a soft circle */}
+                <div
+                  className="w-16 h-16 rounded-2xl bg-white/15 flex items-center justify-center mb-8 animate-float"
+                  style={{ animationDelay: `${i * 0.6}s` }}
+                >
+                  <v.Icon size={30} className="text-white" />
+                </div>
+                <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">{v.title}</h3>
+                <p className="text-white/85 leading-relaxed text-sm md:text-base">{v.body}</p>
+              </div>
+            </div>
+          ))}
         </div>
-        <div className="flex flex-col w-full gap-3 rounded-xl p-4 sm:p-6 md:p-8 transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl bg-gradient-to-b from-blue-500/40 via-blue-500/20 to-white dark:bg-black dark:bg-none">
-          <span className="mb-8 rounded-[50%] w-14 h-14 bg-sky-200/80 dark:bg-neutral-800 flex items-center justify-center">
-            🌎
-          </span>
-          <h3 className="text-lg xs:text-xl md:text-2xl font-bold drop-shadow-lg text-black dark:text-white max-w-full break-words">
-            Comunidad
-          </h3>
-          <p className="mt-4 text-sm xs:text-base md:text-lg max-w-full break-words text-neutral-700 dark:text-neutral-300 leading-relaxed">
-            Creamos un espacio donde todos se sienten como en casa, conectando a
-            nuestra comunidad a través del sabor auténtico de nuestra tierra.
+
+        {/* Food bento grid */}
+        <div>
+          <p
+            data-aos="fade-up"
+            className="text-center text-nica-blue dark:text-nica-gold font-semibold text-xs uppercase tracking-[0.25em] mb-4"
+          >
+            Platillos tipicos
           </p>
+          <h3
+            data-aos="fade-up"
+            data-aos-delay="60"
+            className="text-center text-3xl sm:text-4xl font-bold text-nica-blue-dark dark:text-white mb-10"
+          >
+            Sabores que Recordaras
+          </h3>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {dishes.map((dish, i) => (
+              <div
+                key={dish.name}
+                data-aos="zoom-in"
+                data-aos-delay={`${i * 70}`}
+                className="group relative overflow-hidden rounded-2xl shadow-lg card-glow transition-transform duration-300 hover:-translate-y-1"
+                style={{ aspectRatio: "1 / 1" }}
+              >
+                <Image
+                  src={dish.img}
+                  alt={dish.name}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-nica-blue-dark/85 via-nica-blue-dark/20 to-transparent" />
+                <div className="absolute inset-0 bg-nica-gold/0 group-hover:bg-nica-gold/10 transition-colors duration-500" />
+                <p className="absolute bottom-0 left-0 right-0 text-center text-white font-semibold py-4 text-sm md:text-base">
+                  {dish.name}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

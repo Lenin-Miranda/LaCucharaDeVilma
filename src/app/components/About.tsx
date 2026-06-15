@@ -1,90 +1,101 @@
 "use client";
 import Image from "next/image";
 
+const photos = [
+  { src: "/images/enchiladas.jpeg", alt: "Enchiladas Nicaraguenses" },
+  { src: "/images/carnes.jpeg", alt: "Carnes asadas" },
+  { src: "/images/pescado.jpeg", alt: "Pescado fresco" },
+  { src: "/images/queso.jpeg", alt: "Queso frito" },
+];
+
 export default function About() {
   return (
-    <section className="w-full min-h-screen flex flex-col md:flex-row justify-center items-center px-2 sm:px-6 bg-blue-100 dark:bg-black py-8 overflow-x-hidden">
-      {/* Texto a la izquierda en desktop, arriba en mobile */}
-      <div className="w-full md:w-[56%] flex flex-col justify-center items-start max-w-2xl mx-auto px-2 sm:px-6 break-words">
-        <h1
-          data-aos="fade-left"
-          className="text-2xl xs:text-3xl sm:text-4xl md:text-6xl mb-4 font-bold px-2 sm:px-6 drop-shadow-lg text-black dark:text-white max-w-full break-words text-left"
-        >
-          Nuestra Historia
-        </h1>
-        <p
-          data-aos="fade-right"
-          className="text-sm xs:text-base sm:text-lg md:text-xl mb-6 sm:mb-8 px-2 sm:px-6 max-w-full break-words text-left text-neutral-800 dark:text-neutral-200 leading-relaxed"
-        >
-          Somos un restaurante en casa dedicado a traer el auténtico sabor de
-          Nicaragua a Las Vegas. Nuestra misión es honrar y recordar nuestra
-          patria a través del sazón inconfundible de la comida nica, preparada
-          con el mismo cariño y dedicación de nuestras abuelas. Con más de 3
-          años compartiendo nuestra mesa en Las Vegas y más de 8 años de
-          experiencia en la cocina, cada platillo es una celebración de nuestras
-          raíces y tradiciones. Disfruta de una experiencia casera y familiar,
-          donde cada bocado te transporta a los sabores y recuerdos de nuestra
-          tierra.
-        </p>
-        <p
-          data-aos="fade-left"
-          className="text-sm xs:text-base sm:text-lg md:text-xl px-2 sm:px-6 max-w-full break-words text-left text-neutral-800 dark:text-neutral-200 leading-relaxed"
-        >
-          Somos más que un restaurante; somos una familia que celebra la rica
-          cultura gastronómica nicaragüense, desde el tradicional gallo pinto
-          hasta el indio viejo, pasando por el vigorón que te transportará
-          directamente a Granada.
-        </p>
-      </div>
-      {/* Imágenes a la derecha en desktop, abajo en mobile */}
-      <div className="w-full md:w-[44%] grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-4 items-center md:items-end mt-8 md:mt-24">
-        <div
-          data-aos="fade-right"
-          className="relative w-full h-40 sm:w-64 sm:h-52 md:w-full md:h-60 mx-auto"
-        >
-          <Image
-            src="/images/enchiladas.jpeg"
-            alt="Enchiladas"
-            fill
-            className="object-cover rounded-xl w-full shadow-2xl object-center opacity-80 transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-3"
-            priority
+    <section className="w-full py-20 md:py-28 bg-nica-blue-soft dark:bg-nica-blue-dark overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 flex flex-col lg:flex-row items-center gap-14 lg:gap-20">
+
+        {/* Left: Text */}
+        <div className="flex-1 max-w-xl w-full">
+          <p
+            data-aos="fade-up"
+            className="text-nica-blue dark:text-nica-gold font-semibold text-xs uppercase tracking-[0.25em] mb-4"
+          >
+            Quienes somos
+          </p>
+          <h2
+            data-aos="fade-up"
+            data-aos-delay="60"
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-nica-blue-dark dark:text-white leading-tight mb-6"
+          >
+            Nuestra<br />
+            <span className="text-nica-blue dark:text-nica-gold">Historia</span>
+          </h2>
+
+          {/* Accent rule */}
+          <div
+            data-aos="fade-right"
+            data-aos-delay="100"
+            className="w-14 h-1 bg-nica-gold rounded-full mb-8"
           />
+
+          <p
+            data-aos="fade-up"
+            data-aos-delay="120"
+            className="text-slate-700 dark:text-slate-300 text-base md:text-lg leading-relaxed mb-5"
+          >
+            Somos un restaurante en casa dedicado a traer el autentico sabor de Nicaragua a Las Vegas. Nuestra mision es honrar y recordar nuestra patria a traves del sazon inconfundible de la comida nica, preparada con el mismo carino y dedicacion de nuestras abuelas.
+          </p>
+          <p
+            data-aos="fade-up"
+            data-aos-delay="160"
+            className="text-slate-700 dark:text-slate-300 text-base md:text-lg leading-relaxed mb-10"
+          >
+            Con mas de 3 anos compartiendo nuestra mesa en Las Vegas y mas de 8 anos de experiencia en la cocina, cada platillo es una celebracion de nuestras raices. Somos mas que un restaurante: somos una familia.
+          </p>
+
+          {/* Stats */}
+          <div
+            data-aos="fade-up"
+            data-aos-delay="200"
+            className="grid grid-cols-2 gap-4"
+          >
+            <div className="bg-nica-blue dark:bg-nica-blue/50 rounded-2xl p-5 text-center shadow-lg shadow-nica-blue/20">
+              <p className="text-4xl font-bold text-white mb-1">8+</p>
+              <p className="text-xs text-white/75 uppercase tracking-wide">Anos de experiencia</p>
+            </div>
+            <div className="bg-nica-gold dark:bg-nica-gold/40 rounded-2xl p-5 text-center shadow-lg shadow-nica-gold/20">
+              <p className="text-4xl font-bold text-white mb-1">3+</p>
+              <p className="text-xs text-white/80 uppercase tracking-wide">Anos en Las Vegas</p>
+            </div>
+          </div>
         </div>
-        <div
-          data-aos="fade-left"
-          className="relative w-full h-40 sm:w-64 sm:h-52 md:w-full md:h-60 mx-auto"
-        >
-          <Image
-            src="/images/carnes.jpeg"
-            alt="Carnes asadas"
-            fill
-            className="object-cover rounded-xl shadow-2xl object-center opacity-80 transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-3"
-            priority
-          />
-        </div>
-        <div
-          data-aos="fade-down"
-          className="relative w-full h-40 sm:w-64 sm:h-52 md:w-full md:h-60 mx-auto"
-        >
-          <Image
-            src="/images/pescado.jpeg"
-            alt="Pescado"
-            fill
-            className="object-cover rounded-xl shadow-2xl object-bottom opacity-80 transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-3"
-            priority
-          />
-        </div>
-        <div
-          data-aos="fade-up"
-          className="relative w-full h-40 sm:w-64 sm:h-52 md:w-full md:h-60 mx-auto"
-        >
-          <Image
-            src="/images/queso.jpeg"
-            alt="Queso Frito"
-            fill
-            className="object-cover rounded-xl shadow-2xl object-center opacity-80 transition-transform duration-300 ease-in-out hover:scale-110 hover:rotate-3"
-            priority
-          />
+
+        {/* Right: Image grid with stagger and hover effect */}
+        <div className="flex-1 w-full max-w-lg">
+          <div className="grid grid-cols-2 gap-4">
+            {photos.map((photo, i) => (
+              <div
+                key={photo.src}
+                data-aos="zoom-in"
+                data-aos-delay={`${i * 80}`}
+                className={`relative overflow-hidden rounded-2xl shadow-xl group card-glow transition-transform duration-300 hover:-translate-y-1 ${
+                  i % 2 === 0 ? "mt-6" : "mt-0"
+                }`}
+                style={{ aspectRatio: "4/5" }}
+              >
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+                />
+                {/* Hover label */}
+                <div className="absolute inset-0 bg-linear-to-t from-nica-blue-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                <p className="absolute bottom-0 left-0 right-0 text-center text-white text-sm font-medium py-3 translate-y-full group-hover:translate-y-0 transition-transform duration-400 ease-out">
+                  {photo.alt}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

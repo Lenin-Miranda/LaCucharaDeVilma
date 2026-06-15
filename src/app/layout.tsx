@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "La Cuchara De Vilma",
   description:
-    "Delicious homemade meals made with love and tradition. Experience the taste of home at La Cuchara De Vilma.",
+    "Autentica cocina Nicaraguense en Las Vegas. Sabores de casa preparados con amor y tradicion.",
 };
 
 export default function RootLayout({
@@ -26,9 +26,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es" suppressHydrationWarning>
+      <head>
+        {/* Prevent flash of wrong theme on load */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                const t = localStorage.getItem('theme');
+                if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              } catch(e) {}
+            `,
+          }}
+        />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-nica-blue-dark`}
       >
         <LayoutClient />
         {children}

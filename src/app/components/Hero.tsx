@@ -1,59 +1,82 @@
 "use client";
 import Image from "next/image";
-import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa";
 
 export default function Hero() {
+  const scrollTo = (id: string) => {
+    document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <section className="relative w-full min-h-[70vh] sm:min-h-[80vh] md:min-h-screen flex items-center justify-center overflow-hidden py-8 px-4">
-      <Image
-        src="/images/hero-image.jpeg"
-        alt="Fondo con comida tradicional"
-        fill
-        className="object-cover z-0 opacity-60 object-bottom"
-        priority
-        aria-hidden="true"
-      />
+    <section className="relative w-full min-h-dvh flex items-center overflow-hidden">
+      {/* Background image with CSS parallax */}
+      <div className="absolute inset-0 overflow-hidden">
+        <Image
+          src="/images/hero-image.jpeg"
+          alt="Comida tradicional Nicaraguense"
+          fill
+          className="object-cover object-bottom hero-parallax"
+          priority
+          aria-hidden="true"
+        />
+      </div>
 
-      <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/30 via-black/10 to-white/50 dark:from-black/40 dark:via-black/30 dark:to-black/60" />
+      {/* Gradient overlays */}
+      <div className="absolute inset-0 bg-linear-to-r from-nica-blue-dark/95 via-nica-blue/75 to-nica-blue/20 z-10" />
+      <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-black/30 z-10" />
 
-      <div className="relative z-20 text-center flex flex-col items-center justify-center w-full max-w-4xl mx-auto px-4">
-        <div className="bg-white/70 dark:bg-neutral-900/60 backdrop-blur-md rounded-2xl p-6 sm:p-10 shadow-lg border border-white/30 dark:border-black/30">
-          <h1
-            data-aos="fade-up"
-            className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold mb-3 text-neutral-900 dark:text-neutral-50 leading-tight"
-            role="heading"
-            aria-level={1}
-          >
-            La cuchara de Vilma
-          </h1>
-          <p
-            data-aos="fade-up"
-            data-aos-delay="120"
-            className="text-sm xs:text-base sm:text-lg md:text-xl text-neutral-700 dark:text-neutral-200 mb-6 max-w-3xl mx-auto"
-          >
-            Descubre la tradición y el amor en cada platillo. Sabores auténticos
-            preparados con ingredientes frescos y recetas de familia.
+      {/* Content */}
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-20 pt-28 pb-20">
+        <div className="max-w-2xl">
+          {/* Eyebrow */}
+          <p className="animate-fade-in text-nica-gold font-semibold text-xs uppercase tracking-[0.25em] mb-5">
+            Autentica cocina Nicaraguense en Las Vegas
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center gap-3 justify-center">
-            <a
-              href="#visit"
-              className="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-md px-5 py-3 transition-shadow shadow-md focus:outline-none focus:ring-2 focus:ring-amber-300"
-              aria-label="Ponte en contacto"
+          {/* Headline */}
+          <h1 className="animate-fade-in-up delay-100 text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-[1.05] mb-6">
+            La Cuchara<br />
+            <span className="text-nica-gold">de Vilma</span>
+          </h1>
+
+          {/* Body */}
+          <p className="animate-fade-in-up delay-200 text-white/80 text-base md:text-lg leading-relaxed mb-10 max-w-lg">
+            Tradicion y amor en cada platillo. Sabores autenticos preparados con ingredientes frescos y recetas de familia que honran nuestras raices.
+          </p>
+
+          {/* CTAs */}
+          <div className="animate-fade-in-up delay-300 flex flex-col sm:flex-row items-start gap-4">
+            <button
+              onClick={() => scrollTo("#visit")}
+              className="btn-gold inline-flex items-center gap-3 text-white font-semibold px-8 py-4 rounded-xl shadow-lg"
             >
-              Ponte en contacto
-              <FaArrowRight />
-            </a>
+              Ordenar ahora
+            </button>
+            <button
+              onClick={() => scrollTo("#about")}
+              className="inline-flex items-center gap-3 text-white border border-white/30 hover:border-white/70 hover:bg-white/8 font-semibold px-8 py-4 rounded-xl transition-all duration-300 active:scale-95 backdrop-blur-sm"
+            >
+              Nuestra historia
+            </button>
+          </div>
+
+          {/* Open status */}
+          <div className="animate-fade-in delay-500 mt-12 flex items-center gap-3">
+            <span className="relative flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400" />
+            </span>
+            <span className="text-white/65 text-sm">
+              Abierto hoy - Lunes a Domingo: 8:00am a 5:00pm
+            </span>
           </div>
         </div>
+      </div>
 
-        <div className="mt-6 text-neutral-700 dark:text-neutral-300 text-sm opacity-90 flex flex-col items-center">
-          <span className="mb-2">Abierto hoy · 8:00am — 5:00pm</span>
-          <a href="#visit" className="animate-bounce text-amber-500">
-            ↓
-          </a>
-        </div>
+      {/* Nicaraguan flag stripe at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 z-20 flex h-1.5">
+        <div className="flag-stripe flex-1 bg-nica-blue" />
+        <div className="flag-stripe flex-1 bg-white delay-100" />
+        <div className="flag-stripe flex-1 bg-nica-blue delay-200" />
       </div>
     </section>
   );
