@@ -4,9 +4,9 @@ import { FaFacebookF, FaInstagram, FaPhoneAlt, FaMapMarkerAlt, FaClock } from "r
 const navLinks = [
   { label: "Inicio", to: "#hero" },
   { label: "Historia", to: "#about" },
-  { label: "Por Que Lo Hacemos", to: "#wwdt" },
+  { label: "Por Qué Lo Hacemos", to: "#wwdt" },
   { label: "Opiniones", to: "#reviews" },
-  { label: "Visitanos", to: "#visit" },
+  { label: "Visítanos", to: "#visit" },
 ];
 
 export default function Footer() {
@@ -23,7 +23,7 @@ export default function Footer() {
                 La Cuchara de Vilma
               </h3>
               <p className="text-white/60 text-sm leading-relaxed">
-                Autentica cocina Nicaraguense en Las Vegas, preparada con amor y tradicion familiar.
+                Auténtica cocina nicaragüense en Las Vegas, preparada con amor y tradición familiar.
               </p>
             </div>
 
@@ -55,7 +55,7 @@ export default function Footer() {
           {/* Column 2: Nav links */}
           <div className="flex flex-col gap-4">
             <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-1">
-              Paginas
+              Páginas
             </h4>
             <ul className="flex flex-col gap-3">
               {navLinks.map((link) => (
@@ -75,7 +75,7 @@ export default function Footer() {
           <div className="flex flex-col gap-6">
             <div>
               <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-4">
-                Siguenos
+                Síguenos
               </h4>
               <div className="flex gap-3">
                 <Link
@@ -101,7 +101,7 @@ export default function Footer() {
 
             <div className="bg-white/8 rounded-2xl p-5">
               <p className="text-white font-semibold text-sm mb-1">Haz tu pedido hoy</p>
-              <p className="text-white/60 text-xs mb-4">Llamanos y con gusto te atendemos</p>
+              <p className="text-white/60 text-xs mb-4">Llámanos y con gusto te atendemos</p>
               <a
                 href="tel:7257720694"
                 className="btn-gold inline-flex items-center gap-2 text-white font-semibold text-sm px-5 py-2.5 rounded-xl"

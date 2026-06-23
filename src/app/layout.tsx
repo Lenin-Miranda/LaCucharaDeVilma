@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "La Cuchara De Vilma",
   description:
-    "Autentica cocina Nicaraguense en Las Vegas. Sabores de casa preparados con amor y tradicion.",
+    "Auténtica cocina nicaragüense en Las Vegas. Sabores de casa preparados con amor y tradición.",
 };
 
 export default function RootLayout({

@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="absolute inset-0 overflow-hidden">
         <Image
           src="/images/hero-image.jpeg"
-          alt="Comida tradicional Nicaraguense"
+          alt="Comida tradicional nicaragüense"
           fill
           className="object-cover object-bottom hero-parallax"
           priority
@@ -29,7 +29,7 @@ export default function Hero() {
         <div className="max-w-2xl">
           {/* Eyebrow */}
           <p className="animate-fade-in text-nica-gold font-semibold text-xs uppercase tracking-[0.25em] mb-5">
-            Autentica cocina Nicaraguense en Las Vegas
+            Auténtica cocina nicaragüense en Las Vegas
           </p>
 
           {/* Headline */}
@@ -40,7 +40,7 @@ export default function Hero() {
 
           {/* Body */}
           <p className="animate-fade-in-up delay-200 text-white/80 text-base md:text-lg leading-relaxed mb-10 max-w-lg">
-            Tradicion y amor en cada platillo. Sabores autenticos preparados con ingredientes frescos y recetas de familia que honran nuestras raices.
+            Tradición y amor en cada platillo. Sabores auténticos preparados con ingredientes frescos y recetas de familia que honran nuestras raíces.
           </p>
 
           {/* CTAs */}

@@ -64,12 +64,12 @@ export default function Visit() {
   const infoItems = [
     {
       icon: <FaMapMarkerAlt size={20} />,
-      label: "Direccion",
+      label: "Dirección",
       value: "6136 Windmill Island Ave, Las Vegas",
     },
     {
       icon: <FaPhoneAlt size={18} />,
-      label: "Telefono",
+      label: "Teléfono",
       value: "725 772 0694",
     },
     {
@@ -89,14 +89,14 @@ export default function Visit() {
             data-aos="fade-up"
             className="text-nica-blue dark:text-nica-gold font-semibold text-xs uppercase tracking-[0.25em] mb-4"
           >
-            Ubicacion
+            Ubicación
           </p>
           <h2
             data-aos="fade-up"
             data-aos-delay="60"
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-nica-blue-dark dark:text-white leading-tight"
           >
-            Visitanos
+            Visítanos
           </h2>
         </div>
 
@@ -175,7 +175,7 @@ export default function Visit() {
             className="w-full lg:w-1/2 flex flex-col gap-8"
           >
             <p className="text-slate-600 dark:text-slate-300 text-base md:text-lg leading-relaxed">
-              Ven a disfrutar de una experiencia gastronomica unica. Te esperamos con los brazos abiertos y el mejor sabor Nicaraguense.
+              Ven a disfrutar de una experiencia gastronómica única. Te esperamos con los brazos abiertos y el mejor sabor nicaragüense.
             </p>
 
             <div className="flex flex-col gap-6">
@@ -205,7 +205,7 @@ export default function Visit() {
               onClick={() => document.querySelector("#footer")?.scrollIntoView({ behavior: "smooth" })}
               className="btn-gold self-start text-white font-semibold px-8 py-4 rounded-xl shadow-lg"
             >
-              Contactanos
+              Contáctanos
             </button>
           </div>
         </div>

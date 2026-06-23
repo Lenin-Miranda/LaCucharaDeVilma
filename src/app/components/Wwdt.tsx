@@ -14,22 +14,22 @@ interface Value {
 const values: Value[] = [
   {
     Icon: FaUtensils,
-    title: "Tradicion",
-    body: "Mantenemos vivas las recetas ancestrales que han pasado de generacion en generacion, honrando a quienes nos ensenaron el verdadero sabor de Nicaragua.",
+    title: "Tradición",
+    body: "Mantenemos vivas las recetas ancestrales que han pasado de generación en generación, honrando a quienes nos enseñaron el verdadero sabor de Nicaragua.",
     bg: "bg-nica-blue",
     delay: "0",
   },
   {
     Icon: FaHeart,
-    title: "Pasion",
-    body: "Cada platillo es preparado con dedicacion y carino, porque sabemos que la comida es el lenguaje universal del amor y la familia.",
+    title: "Pasión",
+    body: "Cada platillo es preparado con dedicación y cariño, porque sabemos que la comida es el lenguaje universal del amor y la familia.",
     bg: "bg-nica-gold",
     delay: "100",
   },
   {
     Icon: FaUsers,
     title: "Comunidad",
-    body: "Creamos un espacio donde todos se sienten como en casa, conectando a nuestra comunidad a traves del sabor autentico de nuestra tierra.",
+    body: "Creamos un espacio donde todos se sienten como en casa, conectando a nuestra comunidad a través del sabor auténtico de nuestra tierra.",
     bg: "bg-nica-blue-dark",
     delay: "200",
   },
@@ -37,7 +37,7 @@ const values: Value[] = [
 
 const dishes = [
   { name: "Nacatamal", img: "/images/nacatamal.jpg" },
-  { name: "Vigoron", img: "/images/vigoron.jpg" },
+  { name: "Vigorón", img: "/images/vigoron.jpg" },
   { name: "Quesillo", img: "/images/quesillo.jpg" },
   { name: "Tres Leches", img: "/images/tres-leches.jpg" },
 ];
@@ -60,14 +60,14 @@ export default function Wwdt() {
             data-aos-delay="60"
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-nica-blue-dark dark:text-white leading-tight mb-5"
           >
-            Por Que Lo Hacemos
+            Por Qué Lo Hacemos
           </h2>
           <p
             data-aos="fade-up"
             data-aos-delay="100"
             className="text-slate-600 dark:text-slate-400 text-lg max-w-xl mx-auto leading-relaxed"
           >
-            Nuestra pasion va mas alla de cocinar. Es preservar nuestra herencia y compartir el orgullo de ser Nicaraguenses.
+            Nuestra pasión va más allá de cocinar. Es preservar nuestra herencia y compartir el orgullo de ser nicaragüenses.
           </p>
         </div>
 
@@ -105,14 +105,14 @@ export default function Wwdt() {
             data-aos="fade-up"
             className="text-center text-nica-blue dark:text-nica-gold font-semibold text-xs uppercase tracking-[0.25em] mb-4"
           >
-            Platillos tipicos
+            Platillos típicos
           </p>
           <h3
             data-aos="fade-up"
             data-aos-delay="60"
             className="text-center text-3xl sm:text-4xl font-bold text-nica-blue-dark dark:text-white mb-10"
           >
-            Sabores que Recordaras
+            Sabores que Recordarás
           </h3>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

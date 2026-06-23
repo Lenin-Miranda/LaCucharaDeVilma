@@ -5,7 +5,7 @@ import ThemeToggle from "./ThemeToggle";
 const navLinks = [
   { label: "Inicio", to: "#hero" },
   { label: "Historia", to: "#about" },
-  { label: "Por Que", to: "#wwdt" },
+  { label: "Por Qué", to: "#wwdt" },
   { label: "Opiniones", to: "#reviews" },
   { label: "Visítanos", to: "#visit" },
 ];

@@ -5,21 +5,21 @@ const reviews = [
     initials: "LA",
     name: "Lesther Alarcon",
     role: "Cliente",
-    text: "Si de comer rico se trata la comida nica es unica y en Las Vegas la disfrutamos con la Cuchara de Vilma, sabor y calidad en cada bocado.",
+    text: "Si de comer rico se trata la comida nica es única y en Las Vegas la disfrutamos con la Cuchara de Vilma, sabor y calidad en cada bocado.",
     delay: "0",
   },
   {
     initials: "LS",
     name: "Luisa Santos",
     role: "Cliente fiel",
-    text: "Excelente comida Nicaraguense, realmente te hace sentir como en casa. Cada platillo tiene ese sabor autentico y casero que tanto se anora.",
+    text: "Excelente comida nicaragüense, realmente te hace sentir como en casa. Cada platillo tiene ese sabor auténtico y casero que tanto se añora.",
     delay: "100",
   },
   {
     initials: "CS",
     name: "Carlos Santos",
     role: "Cliente",
-    text: "La comida Nicaraguense de este lugar es simplemente maravillosa. Cada platillo esta hecho con amor y dedicacion que se siente desde el primer bocado.",
+    text: "La comida nicaragüense de este lugar es simplemente maravillosa. Cada platillo está hecho con amor y dedicación que se siente desde el primer bocado.",
     delay: "200",
   },
 ];
@@ -52,7 +52,7 @@ export default function Reviews() {
             data-aos-delay="100"
             className="text-slate-600 dark:text-slate-400 text-lg"
           >
-            La satisfaccion de nuestra familia es nuestro mayor orgullo
+            La satisfacción de nuestra familia es nuestro mayor orgullo
           </p>
         </div>
 
